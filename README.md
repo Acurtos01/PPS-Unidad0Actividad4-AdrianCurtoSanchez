@@ -17,3 +17,17 @@ color.diff=auto
 ```
 
 ## Creación repositorio del proyecto
+En nuestro equipo ejecutamos `git init` en la carpeta donde estamos desarollando este manual. Y creamos el primer coomit.
+Accedemos a [GitHub](#https://github.com) y creamos un nuevo repositorio público con el nombre PPS-Unidad0Actividad4-AdrianCurtoSanchez.
+
+![New repository](images/new-repository.png)
+
+Copiamos y pegamos en la terminal los comandos de agregar el repositorio ya existente.
+![New repository commands](images/new-repository-commands.png)
+```
+git remote add origin git@github.com:Acurtos01/PPS-Unidad0Actividad4-AdrianCurtoSanchez.git
+git branch -M main
+git push -u origin main
+```
+![New repository commands execution](images/new-repository-commands-execution.png)
+
