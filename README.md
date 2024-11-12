@@ -2,6 +2,7 @@
 
 1. [Configuración adicional de GIT](#configuración-adicional-de-git)
 2. [Creación repositorio del proyecto](#creación-repositorio-del-proyecto)
+3. [Ignorar ficheros con gitignore](#ignorar-ficheros-con-gitignore)
 
 
 ## Configuración adicional de GIT
@@ -31,4 +32,18 @@ git branch -M main
 git push -u origin main
 ```
 ![New repository commands execution](images/new-repository-commands-execution.png)
+
+## Ignorar ficheros con gitignore
+Cremos el directorio *excluided* y el fichero excluido.txt.
+
+![Excluded directory and file](images/excluded-directory-file.png)
+
+Como se puede apreciar en la captura anterior git nos está indicando que hay dos nuevos elementos. Ahora creamos el fichero .gitignore e introducimos lo siguiente dentro de el para evitar que git continue realizando el siguimiento del direcotrio y el fichero creado anteriormente:
+```
+/excluded
+*.txt
+```
+Ahora podemos observar que han sido excluidos del seguimiento.
+
+![Created gitignore](images/created-gitignore.png)
 
