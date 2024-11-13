@@ -66,4 +66,4 @@ Para crear un commit con estos cambios ejecutaremos el comando `git commit -am "
 
 ![Git commit -am](images/git-commit-am.png)
 
-Volvemos a ejecutar el comando `git status -s` y esta vez no nosmuestra ningún fichero.
+Volvemos a ejecutar el comando `git status -s` y esta vez no nosmuestra ningún fichero, podemos estar seguros de que nuestros ambios están guadados y podemos realizar la subida al repositorio remoto con `git push`.
