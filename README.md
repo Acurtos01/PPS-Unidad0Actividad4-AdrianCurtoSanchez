@@ -63,3 +63,7 @@ Una vez creado el fichero con su contenido podemos obtener una pequeña ayuda de
 En la salida anterior podemos observar que el fichero README.md ha sido modificado e index.html se encuentra en estado sin seguimiento.
 
 Para crear un commit con estos cambios ejecutaremos el comando `git commit -am "mensaje del commit"`, el parámetro *a* indica que se agregen todos los ficheros rastreados y el parámetro m permite especificar el mensaje del commit.
+
+![Git commit -am](images/git-commit-am.png)
+
+Volvemos a ejecutar el comando `git status -s` y esta vez no nosmuestra ningún fichero.
