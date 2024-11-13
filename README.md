@@ -3,6 +3,7 @@
 1. [Configuración adicional de GIT](#configuración-adicional-de-git)
 2. [Creación repositorio del proyecto](#creación-repositorio-del-proyecto)
 3. [Ignorar ficheros con gitignore](#ignorar-ficheros-con-gitignore)
+4. [Trabajo con Git](#trabajo-con-git)
 
 
 ## Configuración adicional de GIT
@@ -47,3 +48,18 @@ Ahora podemos observar que han sido excluidos del seguimiento.
 
 ![Created gitignore](images/created-gitignore.png)
 
+
+## Trabajo con Git
+
+Creamos un fichero en nuestro proyecto con el nombre index.html, el cual contendrá el siguiente código:
+```
+<H1>Hola $USER¡¡¡ ¿Qué tal te encuentras?</H1>
+```
+
+Una vez creado el fichero con su contenido podemos obtener una pequeña ayuda de git con el comando `git status -s`el cual con el parámetro *-s* nos devolverá una salida abrebiada.
+
+![Git status short](images/git-status-short.png)
+
+En la salida anterior podemos observar que el fichero README.md ha sido modificado e index.html se encuentra en estado sin seguimiento.
+
+Para crear un commit con estos cambios ejecutaremos el comando `git commit -am "mensaje del commit"`, el parámetro *a* indica que se agregen todos los ficheros rastreados y el parámetro m permite especificar el mensaje del commit.
