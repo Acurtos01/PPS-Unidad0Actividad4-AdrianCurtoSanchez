@@ -7,6 +7,7 @@
 5. [Servidor web local](#servidor-web-local)
 6. [Más cambios con Git](#más-cambios-con-git)
 7. [Uso de git log](#uso-de-git-log)
+8. [Ramas](#ramas)
 
 
 ## Configuración adicional de GIT
@@ -164,3 +165,27 @@ Otra opción interesante es el empleo de mostrar los commits por fechas con el u
 ![Git log since](images/git-log-since.png)
 
 Se puede ver como solo muestra los datos del último día.
+
+
+## Ramas
+
+Con el comando `git branch --list` o `git branch` podemos listar las ramas del reositorio.
+
+![Git branch list](images/git-branch-list.png)
+
+
+Podemos crear una rama nueva y situarnos en ella con el comando `git checkout -b Vers1`.
+
+![Git checkout -b Vers1](images/git-checkout-b-Vers1.png)
+
+Aplicamos modificaciones en index.html sobre esta nueva rama.
+
+![Branch Vers1 index.html](images/branch-vers1-index.html.png)
+
+Subimos los cambios de la rama con el comando `git push origin Vers1`.
+
+![Git push origin Vers1](images/git-push-origin-vers1.png)
+
+Para ver las diferencias entre las ramas usamos el comando `git diff main Vers1 --name-only` con el modificador `--name-only` nos mostrará solo los nombres de los ficheros con diferencias.
+
+![Git diff branchs](images/git-diff-branchs.png)
