@@ -6,6 +6,7 @@
 4. [Trabajo con Git](#trabajo-con-git)
 5. [Servidor web local](#servidor-web-local)
 6. [Más cambios con Git](#más-cambios-con-git)
+7. [Uso de git log](#uso-de-git-log)
 
 
 ## Configuración adicional de GIT
@@ -108,7 +109,58 @@ Otra alternativa al paso anerior es el empleo del comando `git mv index.html.sav
 
 ![git mv fail](images/git-mv-fail.png)
 
-Para poder ejecutar el comando anerior el ficheros origen debe estar bajo seguimiento, sino nos dará un error como se aprecia en la captura anterior. Añadimos el fichero index.html.save al seguimiento y borramos el fichero index.html ya que el comando `git mv` lo que hace el mover ficheros o copiarlos.
+Para poder ejecutar el comando anerior el ficheros origen debe estar bajo seguimiento, sino nos dará un error como se aprecia en la captura anterior. Añadimos el fichero index.html.save al seguimiento y borramos el fichero index.html ya que el comando `git mv` lo que hace el mover ficheros o renombralos.
+
+![git mv](images/git-mv.png)
+
+Comprobamos los cambios de nuevo con `git status` donde podemos apreciar que index.html no ha sufrido cambios pese a haber estado trasteando con el.
+
+![git status](images/git-status-2.png)
+
+Confirmamos los cambios realizados con un commit y subimos los cambios al repositorio.
+
+Revisamos que los cambios han sido aplicados en el repositorio de GitHub.
+
+![Github changes](images/github-changes.png)
+
+Se observa que los los últimos cambios en los ficheros son recientes. Ahora modificaremos index.html desde el propio repositorio remoto de Github. Para ello accedemos al fichero en cuestión y arriba a la derecha pulsamos el botón con el icono de un lapiz.
+
+![Github edit index.html](images/github-edit-index.html.png)
+
+Añadimos los cambios y tras ello hacemos clic en *Commit changes...*
+
+![GitHub commit changes](images/github-edit-commitchanges.png)
+
+Confirmamos el mensaje del commit en el modal y clicamos en *Commit changes*.
+
+![GitHub confirm commit changes](images/github-edit-confirm-commit.png)
+
+Si nos traemos los cambios realizados con `git pull` y refrescamos el navegador veremos el cambio realizado en index.html
+
+![Git pull index.html](images/git-pull-index.html.png)
 
 
+## Uso de git log
 
+Podemos observar todos los cambios realizados hasta ahora con el comando git log.
+
+![Git log](images/git-log.png)
+
+También podemos limitar el número de commits mostrados, para ello añadiremos como parámetro el numero de commits deseados, por ejemplo para mostrar los últimos 3 commit usamos el comando `git log -3`.
+
+![Git log limit 3](images/git-log-limit3.png)
+
+Tenemos la opción de añadir el modificador `--prety` para visionar los datos de una forma más amigable, esta tiene varios parámetros disponibles para mostrar la información en este caso se usará el parámetro `oneline`que muestra los commits en una sola línea.
+
+![Git log pretty oneline](images/git-log-pretty-oneline.png)
+
+
+Podemos indicar que miestre las diferencias en los ficheros de cada commit con el parámetro `-p`, mostraremos las diferencias de los dos últimos commits con el comando `git log -p -2`.
+
+![Git log diff](images/git-log-diff.png)
+
+Otra opción interesante es el empleo de mostrar los commits por fechas con el uso de pretty `--since`, mostraremos los commit del último día como ejemplo con el comando `git log --since=1.day`.
+
+![Git log since](images/git-log-since.png)
+
+Se puede ver como solo muestra los datos del último día.
