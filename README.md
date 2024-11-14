@@ -4,6 +4,8 @@
 2. [Creación repositorio del proyecto](#creación-repositorio-del-proyecto)
 3. [Ignorar ficheros con gitignore](#ignorar-ficheros-con-gitignore)
 4. [Trabajo con Git](#trabajo-con-git)
+5. [Servidor web local](#servidor-web-local)
+6. [Más cambios con Git](#más-cambios-con-git)
 
 
 ## Configuración adicional de GIT
@@ -67,3 +69,46 @@ Para crear un commit con estos cambios ejecutaremos el comando `git commit -am "
 ![Git commit -am](images/git-commit-am.png)
 
 Volvemos a ejecutar el comando `git status -s` y esta vez no nosmuestra ningún fichero, podemos estar seguros de que nuestros ambios están guadados y podemos realizar la subida al repositorio remoto con `git push`.
+
+
+## Servidor web local
+
+Para visualizar los cambios en el fichero index.html en local podemos ejecutar un servicio php con el comando `php -S 0:8080`en el directior actual del proyecto.
+
+![Execute PHP server](images/execute-php-server.png)
+
+Ahora en el navegador podemos acceder a http://localhost:8080 y podremos observar el contenido de index.html.
+
+![localhost index](images/localhost-index.png)
+
+
+## Más cambios con Git
+
+Creamos una copia de index.html con nombre index.html.save.
+
+![Created index.html.save](images/created-index.html.save.png)
+
+Ahora que tenemos una copia implemetaremos cambios en el fichero index.html y al refrescar la página en el navegador veremos los cabios aplicados.
+
+![Changes index.html](images/changes-index.html.png)
+
+Ahora si verificamos el estado del proyecto con `git status` veremos los ficheros nuevos que aún no estan en seguimiento y los ficheros con cambios. Tambien nos da sugerencias de que hacer con esos ficheros.
+
+![git status](images/git-status.png)
+
+Con el comando `git diff`podemos revisar los ficheros con cambios en el proyecto.
+
+![git diff](images/git-diff.png)
+
+Para volver a la versión anterior de index.html empleamos el comando `git restore index.html`, tras este cambio si refrescamos el navegador veremos el fichero a vuelto al estado anterior.
+
+![localhost-index-restore](images/localhost-index-restore.png)
+
+Otra alternativa al paso anerior es el empleo del comando `git mv index.html.save index.html` idicamos que el contenido de index.html.save pase a index.html.
+
+![git mv fail](images/git-mv-fail.png)
+
+Para poder ejecutar el comando anerior el ficheros origen debe estar bajo seguimiento, sino nos dará un error como se aprecia en la captura anterior. Añadimos el fichero index.html.save al seguimiento y borramos el fichero index.html ya que el comando `git mv` lo que hace el mover ficheros o copiarlos.
+
+
+
